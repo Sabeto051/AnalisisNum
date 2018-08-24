@@ -25,6 +25,8 @@
 
 function [y] = fun (x)
 
-y = (5*x^2+ exp(3*x))/(sin(2*x)+3);
+%y = (5*x^2+ exp(3*x))/(sin(2*x)+3);
+
+y= exp(3*x)-4*x^2+17*sin(x)-7*x+8;
 
 endfunction
