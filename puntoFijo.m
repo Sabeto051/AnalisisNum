@@ -22,35 +22,27 @@
 ## Author: SantiagoBedoya <santiagobedoya@santiagobedoya-Lenovo-G40-80>
 ## Created: 2018-08-24
 
-function [resultados] = biseccion (a,b, nmax, delta, tole)
+function [resultados] = puntoFijo (a, nmax, delta, tole)
 
 format long
 
 i=0;
 h=delta+1;
-xant = b;
 error = tole+1;
 
 while i<nmax && h>delta && error>tole
-  x= (a+b)/2;
+  x= gun(a);
   y=fun(x);
   h=abs(y);
-  error = abs(x-xant);
+  error = abs(x-a);
   
-  
-  if (fun(a)*y)<0
-    b=x;
-   else
-    a=x;
-   endif
-   
    i+=1;
-   xant=x;
    
    resultados(i,1)=i;
    resultados(i,2)=x;
    resultados(i,3)=y;
    resultados(i,4)=error;
+   a=x;
    
 endwhile
 

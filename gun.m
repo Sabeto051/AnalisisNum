@@ -14,44 +14,17 @@
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*- 
-## @deftypefn {} {@var{retval} =} biseccion (@var{input1}, @var{input2})
+## @deftypefn {} {@var{retval} =} gun (@var{input1}, @var{input2})
 ##
 ## @seealso{}
 ## @end deftypefn
 
 ## Author: SantiagoBedoya <santiagobedoya@santiagobedoya-Lenovo-G40-80>
-## Created: 2018-08-24
+## Created: 2018-08-31
 
-function [resultados] = biseccion (a,b, nmax, delta, tole)
-
-format long
-
-i=0;
-h=delta+1;
-xant = b;
-error = tole+1;
-
-while i<nmax && h>delta && error>tole
-  x= (a+b)/2;
-  y=fun(x);
-  h=abs(y);
-  error = abs(x-xant);
+function [y] = gun (x)
   
+  y= asin((4*x^2-exp(3*x)+7*x-8)/(17));
   
-  if (fun(a)*y)<0
-    b=x;
-   else
-    a=x;
-   endif
-   
-   i+=1;
-   xant=x;
-   
-   resultados(i,1)=i;
-   resultados(i,2)=x;
-   resultados(i,3)=y;
-   resultados(i,4)=error;
-   
-endwhile
 
 endfunction

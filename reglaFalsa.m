@@ -22,7 +22,7 @@
 ## Author: SantiagoBedoya <santiagobedoya@santiagobedoya-Lenovo-G40-80>
 ## Created: 2018-08-24
 
-function [resultados] = biseccion (a,b, nmax, delta, tole)
+function [resultados] = reglaFalsa (a,b, nmax, delta, tole)
 
 format long
 
@@ -32,7 +32,7 @@ xant = b;
 error = tole+1;
 
 while i<nmax && h>delta && error>tole
-  x= (a+b)/2;
+  x= b-(fun(b)*(b-a))/(fun(b)-fun(a));
   y=fun(x);
   h=abs(y);
   error = abs(x-xant);
