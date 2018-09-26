@@ -14,37 +14,16 @@
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*- 
-## @deftypefn {} {@var{retval} =} biseccion (@var{input1}, @var{input2})
+## @deftypefn {} {@var{retval} =} matriz (@var{input1}, @var{input2})
 ##
 ## @seealso{}
 ## @end deftypefn
 
 ## Author: SantiagoBedoya <santiagobedoya@santiagobedoya-Lenovo-G40-80>
-## Created: 2018-08-24
+## Created: 2018-09-26
 
-function [resultados] = secante (a,b, nmax, delta, tole)
-
-format long
-
-i=0;
-h=delta+1;
-error = tole+1;
-
-while i<nmax && h>delta && error>tole && fun(a)~=fun(b)
-  x= b-(fun(b)*(b-a))/(fun(b)-fun(a));
-  y=fun(x);
-  h=abs(y);
-  error = abs(x-b);
+function [y] = matriz ()
   
-  i+=1;
-  
-  resultados(i,1)=i;
-  resultados(i,2)=x;
-  resultados(i,3)=y;
-  resultados(i,4)=error;
-  a=b;
-  b=x;
-   
-endwhile
+  y=[17 8 -5;-3 20 -6;1 -3 14];
 
 endfunction

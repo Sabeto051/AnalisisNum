@@ -27,6 +27,11 @@ function [y] = fun (x)
 
 %y = (5*x^2+ exp(3*x))/(sin(2*x)+3);
 
-y= exp(3*x)-4*x^2+17*sin(x)-7*x+8;
+%y= exp(3*x)-4*x^2+17*sin(x)-7*x+8;
 
+%y = x^2 - exp(x) + sin(x) + 2*x - 4;
+
+
+  %y = 1000000*exp(x) + 435000*(exp(x)-1)/x - 1564000;
+  y = 2*x - 0.5 + cos(x);
 endfunction
