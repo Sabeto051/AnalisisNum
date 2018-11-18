@@ -24,6 +24,16 @@
 
 function [y] = matriz ()
   
-  y=[17 8 -5;-3 20 -6;1 -3 14];
+  %y=[17 8 -5;-3 20 -6;1 -3 14];
+  
+  for i=1 : 10
+    for j=1 : 10
+      if j==i
+        y(i,j)=55;
+      else
+        y(i,j)=i;
+      endif
+    endfor
+  endfor
 
 endfunction

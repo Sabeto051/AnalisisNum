@@ -24,6 +24,12 @@
 
 function [y] = vectorb ()
   
-  y=[40;0;-1/4];
+  %y=[40;0;-1/4];
+  
+  %for i=1 : 10
+  %  y(i)=1;
+  %endfor
+  
+  y=[1;1;1;1;1;1;1;1;1;1];
 
 endfunction

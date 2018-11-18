@@ -14,18 +14,19 @@
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*- 
-## @deftypefn {} {@var{retval} =} gun (@var{input1}, @var{input2})
+## @deftypefn {} {@var{retval} =} borrar (@var{input1}, @var{input2})
 ##
 ## @seealso{}
 ## @end deftypefn
 
 ## Author: SantiagoBedoya <santiagobedoya@santiagobedoya-Lenovo-G40-80>
-## Created: 2018-08-31
+## Created: 2018-10-10
 
-function [y] = gun (x)
+function [B] = borrar ()
   
-  %y= asin((4*x^2-exp(3*x)+7*x-8)/(17));
-  y = x - (exp(3*x)-4*x^2+17*sin(x)-7*x+8)/(3*exp(e*x)-8*x+17*cos(x)-7);
-  %y = cos(x);
-
+  A=matriz()
+  
+  [m,n] = size(A)
+  B= eye(n)-A
+  
 endfunction

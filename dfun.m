@@ -22,7 +22,7 @@
 ## Author: SantiagoBedoya <santiagobedoya@santiagobedoya-Lenovo-G40-80>
 ## Created: 2018-09-05
 
-function [retval] = dfun (input1, input2)
+function [y] = dfun (input1, input2)
   
   y = 3* x^2  - exp(x) + cos(x) + 2;
   

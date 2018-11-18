@@ -14,18 +14,37 @@
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*- 
-## @deftypefn {} {@var{retval} =} gun (@var{input1}, @var{input2})
+## @deftypefn {} {@var{retval} =} jacobi (@var{input1}, @var{input2})
 ##
 ## @seealso{}
 ## @end deftypefn
 
 ## Author: SantiagoBedoya <santiagobedoya@santiagobedoya-Lenovo-G40-80>
-## Created: 2018-08-31
+## Created: 2018-09-26
 
-function [y] = gun (x)
+function [] = richardson (vecini,nmax,delta,tole)
   
-  %y= asin((4*x^2-exp(3*x)+7*x-8)/(17));
-  y = x - (exp(3*x)-4*x^2+17*sin(x)-7*x+8)/(3*exp(e*x)-8*x+17*cos(x)-7);
-  %y = cos(x);
-
+  format long
+  
+  A= matriz();
+  b= vectorb();
+  [m,n] = size(A);
+  
+  T= eye(n)-A;
+  C= b;
+  
+  i= 0;
+  h= delta+1; 
+  error= tole+1;
+  while i<nmax && h>delta && error>tole
+    i+= 1
+    X= T * vecini + C
+    h= norm(A*X-b) ##  h= || AX1-b ||
+    error= norm(X-vecini) ## error = || X1-X0 ||
+    display('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    
+    vecini= X;
+  endwhile
+  
+  
 endfunction
